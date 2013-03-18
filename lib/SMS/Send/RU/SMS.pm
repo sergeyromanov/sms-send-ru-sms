@@ -25,17 +25,29 @@ sub new {
 sub send_sms {
     my( $self, %args ) = @_;
 
-    my $token = $self->{_ua}->get($token_url)->{content};
-
     my $res = $self->{_ua}->post_form($send_url,
     {
-        login  => $self->{_login},
-        token  => $token,
-        sha512 => sha512_hex(join '', $self->{_password}, $token),
+        ( $self->{_api_id}
+            ? ( api_id => $self->{_api_id} )
+            : do {
+                my $token = $self->_get_token;
+                (
+                    login  => $self->{_login},
+                    token  => $token,
+                    sha512 => sha512_hex($self->{_password} . $token),
+                )
+              }
+        ),
         (map { (/^_(.+)/ ? $1 : $_) => $args{$_} } keys %args),
     });
 
     return $res->{content} =~ /^100\b/;
+}
+
+sub _get_token {
+    my $self = shift;
+
+    return $self->{_ua}->get($token_url)->{content};
 }
 
 1;
