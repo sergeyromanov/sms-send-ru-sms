@@ -51,3 +51,26 @@ sub _get_token {
 }
 
 1;
+
+__DATA__
+
+=head1 NAME
+
+SMS::Send::RU::SMS - L<SMS::Send> backend for L<http://sms.ru>
+
+=head1 SEE ALSO
+
+L<SMS::Send> - base class to use this one.
+
+=head1 AUTHOR
+
+Sergey Romanov, C<sromanov@cpan.org>.
+
+=head1 COPYRIGHT AND LICENSE
+
+Copyright (C) 2013 by Sergey Romanov.
+
+This library is free software; you can redistribute it and/or modify
+it under the terms of the Artistic License version 2.0.
+
+=cut
