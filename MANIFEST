@@ -1,0 +1,8 @@
+Changes
+Makefile.PL
+MANIFEST
+MANIFEST.SKIP
+t/00-load.t
+xt/00-simple_send.t
+examples/test_send.pl
+lib/SMS/Send/RU/SMS.pm

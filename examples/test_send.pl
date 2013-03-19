@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 
-use 5.016;
+use 5.012;
 use utf8;
 
 use SMS::Send;

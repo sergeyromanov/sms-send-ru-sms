@@ -8,6 +8,8 @@ use base 'SMS::Send::Driver';
 use Digest::SHA qw(sha512_hex);
 use HTTP::Tiny;
 
+our $VERSION = '0.01';
+
 my $send_url  = 'http://sms.ru/sms/send';
 my $token_url = 'http://sms.ru/auth/get_token';
 
@@ -50,7 +52,7 @@ sub _get_token {
     return $self->{_ua}->get($token_url)->{content};
 }
 
-1;
+1 && q[David Bowie - Life On Mars?];
 
 __DATA__
 
