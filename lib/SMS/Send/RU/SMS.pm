@@ -60,6 +60,27 @@ __DATA__
 
 SMS::Send::RU::SMS - L<SMS::Send> backend for L<http://sms.ru>
 
+=head1 SYNOPSIS
+
+    use SMS::Send;
+
+    my $sender = SMS::Send->new('RU::SMS',
+        _login    => 'sms_ru_login',
+        _password => 'sms_ru_password',
+    );
+
+    my $sent = $sender->send_sms(
+        text => "Perl is dead, but I'm not dead yet",
+        to   => '79212128506',
+    );
+
+    if ( $sent ) {
+        say "Message sent OK";
+    }
+    else {
+        say "Failed to send message";
+    }
+
 =head1 SEE ALSO
 
 L<SMS::Send> - base class to use this one.
