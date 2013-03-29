@@ -11,8 +11,9 @@ WriteMakefile(
     ABSTRACT_FROM => 'lib/SMS/Send/RU/SMS.pm',
     AUTHOR        => 'Sergey Romanov <sromanov@cpan.org>',
     PREREQ_PM     => {
-        'SMS::Send'  => '0',
-        'HTTP::Tiny' => '0',
+        'SMS::Send'   => '0',
+        'HTTP::Tiny'  => '0',
+        'Digest::SHA' => '0',
     },
     ( $mm >= 6.31
         ? ( LICENSE => 'artistic_2' )
