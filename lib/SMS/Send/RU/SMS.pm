@@ -55,6 +55,9 @@ sub _get_token {
 1 && q[David Bowie - Life On Mars?];
 
 __DATA__
+=pod
+
+=encoding UTF-8
 
 =head1 NAME
 
